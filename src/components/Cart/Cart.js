@@ -24,7 +24,7 @@ const Cart = () => {
       // const { data } = await getCart();
       // console.log(data);
       const response = await updateCart(productDetails, productId, "REMOVE");
-      console.log(response.data);
+      
       setOrderDetails(response.data);
       setProductDetails(response.data.productsSelected);
     } catch (error) {
