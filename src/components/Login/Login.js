@@ -69,6 +69,7 @@ const Login = () => {
 
     try {
       const response = await signIn(user);
+      console.log(response);
       clearState();
 
       //create a new cart
