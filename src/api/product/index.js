@@ -25,7 +25,6 @@ export const getProductsForCategory = async (categoryId) => {
   try {
 
     const response = await AxiosInstance.get(URI);
-    console.log(response);
     return response;
 
   } catch (error) {
@@ -43,7 +42,6 @@ export const search = async (searchTerm) => {
   try {
 
     const response = await AxiosInstance.get(URI, { params: searchTerm });
-    console.log(response);
     return response;
 
   } catch (error) {
