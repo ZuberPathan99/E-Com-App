@@ -32,20 +32,18 @@ const LandingPage = () => {
                 <Link to="/products">All Products</Link>
               </div>
               {categories?.map((category) => (
-                <>
-                  <div className="category-item" key={category.id}>
-                    <Link
-                      to={`/products${
-                        category.id
-                          ? `?categoryId=${category.id}&name=${category.name}`
-                          : ""
-                      }`}
-                      className="text-white"
-                    >
-                      {category.name}
-                    </Link>
-                  </div>
-                </>
+                <div className="category-item" key={category.id}>
+                  <Link
+                    to={`/products${
+                      category.id
+                        ? `?categoryId=${category.id}&name=${category.name}`
+                        : ""
+                    }`}
+                    className="text-white"
+                  >
+                    {category.name}
+                  </Link>
+                </div>
               ))}
             </div>
           </div>

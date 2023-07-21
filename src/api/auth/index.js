@@ -7,7 +7,7 @@ export const signIn = async (user) => {
   try {
 
     const response = await AxiosInstance.post(URL, user);
-    console.log(response);
+    
     const { username, id, accessToken } = response.data;
 
     localStorage.setItem("username", username)
@@ -31,7 +31,6 @@ export const signUp = async (user) => {
   try {
 
     const response = await AxiosInstance.post(URL, user);
-    console.log(response);
     return response;
   } catch (error) {
 

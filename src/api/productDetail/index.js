@@ -8,7 +8,6 @@ export const getProduct = async (id) => {
   try {
 
     const product = await AxiosInstance.get(URI);
-    console.log(product);
     return product;
 
   } catch (error) {

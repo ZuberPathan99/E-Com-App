@@ -33,7 +33,6 @@ export const updateCart = async (existingProducts, product, action) => {
 
   const URI = `/carts/${cartId}`;
 
-  console.log({ URI });
   const token = localStorage.getItem("token");
 
   const headers = {
@@ -65,12 +64,11 @@ export const updateCart = async (existingProducts, product, action) => {
 
   }
 
-  console.log("🚀 ~ file: index.js ~ line 67 ~ updateCart ~ productIds", productIds);
 
   try {
 
     const response = await AxiosInstance.put(URI, { productIds }, { headers });
-    console.log(response.data);
+  
     return response;
 
   } catch (error) {
@@ -89,7 +87,7 @@ export const getCart = async () => {
   const URI = `/carts/${cartId}`;
 
   const token = localStorage.getItem("token");
-  console.log({ token });
+  
 
   const headers = {
     'Authorization': `Bearer ${token}`
@@ -98,7 +96,7 @@ export const getCart = async () => {
   try {
 
     const cart = await AxiosInstance.get(URI, { headers });
-    console.log(cart);
+  
     return cart;
 
   } catch (error) {

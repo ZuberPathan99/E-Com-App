@@ -22,7 +22,7 @@ const ProductDetail = () => {
     if (user) setIsLoggedin(true);
 
     const response = await getProduct(selectedProduct);
-    console.log(response.data)
+    
     setProductDetails(response.data);
 
   }
@@ -39,7 +39,7 @@ const ProductDetail = () => {
     try {
 
       const { data } = await getCart();
-      console.log(data);
+      
       await updateCart(data.productsSelected, productDetails.id, "ADD")
       const newProductDetails = { ...productDetails }
       newProductDetails.addedToCart = 1;

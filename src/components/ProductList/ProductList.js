@@ -30,7 +30,7 @@ const ProdustList = () => {
       const products = id
         ? await getProductsForCategory(id)
         : await getAllProducts();
-      console.log(products.data);
+
       setProductList(products.data);
     } catch (error) {
       console.error(error);
@@ -55,13 +55,11 @@ const ProdustList = () => {
   };
 
   const updateMinPrice = async (e) => {
-    console.log(e.target.value);
     setMinPrice(e.target.value);
     filterProduct(e.target.value, maxPrice, searchTerm);
   };
 
   const updateMaxPrice = async (e) => {
-    console.log(e.target.value);
     setMaxPrice(e.target.value);
     filterProduct(minPrice, e.target.value, searchTerm);
   };
